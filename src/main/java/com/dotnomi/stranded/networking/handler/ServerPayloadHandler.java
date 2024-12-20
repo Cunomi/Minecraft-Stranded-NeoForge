@@ -11,7 +11,7 @@ public class ServerPayloadHandler {
 
   public static void handleKeyInput(KeyInputC2SPacket payload, IPayloadContext context) {
     context.enqueueWork(() -> {
-      LOGGER.info("Received KeyInputC2SPacket {keyMappingName:{}}", payload.keyMappingName());
+      LOGGER.debug("Received KeyInputC2SPacket {keyMappingName:{}}", payload.keyMappingName());
     }).exceptionally(exception -> {
       context.disconnect(Component.translatable("stranded.networking.failed", exception.getMessage()));
       LOGGER.error(exception.getMessage(), exception);

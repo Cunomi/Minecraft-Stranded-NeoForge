@@ -18,7 +18,7 @@ public class ModPayloads {
   public static void register(final RegisterPayloadHandlersEvent event) {
     final PayloadRegistrar registrar = event.registrar("1").executesOn(HandlerThread.NETWORK);
 
-    LOGGER.info("Registering ModPayloads");
+    LOGGER.debug("Registering ModPayloads");
 
     registerClientPackets(registrar);
     registerServerPackets(registrar);
@@ -26,7 +26,7 @@ public class ModPayloads {
   }
 
   private static void registerClientPackets(PayloadRegistrar registrar) {
-    LOGGER.info("Registering Client Packets");
+    LOGGER.debug("Registering Client Packets");
 
     registrar.playToClient(
       PlayVoiceoverS2CPacket.TYPE,
@@ -36,7 +36,7 @@ public class ModPayloads {
   }
 
   private static void registerServerPackets(PayloadRegistrar registrar) {
-    LOGGER.info("Registering Server Packets");
+    LOGGER.debug("Registering Server Packets");
 
     registrar.playToServer(
       KeyInputC2SPacket.TYPE,

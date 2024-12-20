@@ -23,6 +23,6 @@ public class VoiceoverSkipKeyInputHandler extends AbstractKeyInputHandler {
 
   @Override
   public void onKeyPress(KeyMapping keyMapping) {
-    LOGGER.info("Voiceover skip key pressed");
+    LOGGER.debug("Voiceover skip key pressed");
   }
 }

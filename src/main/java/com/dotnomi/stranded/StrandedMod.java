@@ -38,7 +38,7 @@ public class StrandedMod
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
+        LOGGER.debug("HELLO FROM COMMON SETUP");
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -48,7 +48,7 @@ public class StrandedMod
     @SubscribeEvent
     public void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
-            LOGGER.info(serverPlayer.getUUID() + " joined the server");
+            LOGGER.debug(serverPlayer.getUUID() + " joined the server");
             PacketDistributor.sendToPlayer(serverPlayer, new PlayVoiceoverS2CPacket("Test"));
         }
     }

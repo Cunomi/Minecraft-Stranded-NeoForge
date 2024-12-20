@@ -25,7 +25,7 @@ public class DebugKeyInputHandler extends AbstractKeyInputHandler {
 
   @Override
   public void onKeyPress(KeyMapping keyMapping) {
-    LOGGER.info("Debug key pressed");
+    LOGGER.debug("Debug key pressed");
   }
 
   @Override

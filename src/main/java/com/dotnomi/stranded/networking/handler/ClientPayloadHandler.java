@@ -11,7 +11,7 @@ public class ClientPayloadHandler {
 
   public static void handlePlayVoiceover(final PlayVoiceoverS2CPacket payload, final IPayloadContext context) {
     context.enqueueWork(() -> {
-      LOGGER.info("Received PlayVoiceoverS2CPacket {voiceoverId:{}}", payload.voiceoverId());
+      LOGGER.debug("Received PlayVoiceoverS2CPacket {voiceoverId:{}}", payload.voiceoverId());
     }).exceptionally(exception -> {
       context.disconnect(Component.translatable("stranded.networking.failed", exception.getMessage()));
       LOGGER.error(exception.getMessage(), exception);
