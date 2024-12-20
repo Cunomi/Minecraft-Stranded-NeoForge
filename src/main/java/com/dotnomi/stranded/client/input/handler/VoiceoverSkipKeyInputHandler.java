@@ -3,6 +3,7 @@ package com.dotnomi.stranded.client.input.handler;
 import com.dotnomi.stranded.client.input.AbstractKeyInputHandler;
 import com.dotnomi.stranded.client.input.KeyMappings;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.KeyMapping;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import org.slf4j.Logger;
@@ -21,7 +22,7 @@ public class VoiceoverSkipKeyInputHandler extends AbstractKeyInputHandler {
   }
 
   @Override
-  public void onKeyPress() {
+  public void onKeyPress(KeyMapping keyMapping) {
     LOGGER.info("Voiceover skip key pressed");
   }
 }

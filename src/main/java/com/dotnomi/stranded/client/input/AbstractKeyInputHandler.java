@@ -15,15 +15,15 @@ public abstract class AbstractKeyInputHandler implements IKeyInputHandler {
     while (keyMapping.consumeClick()) {
       if (!wasPressed) {
         wasPressed = true;
-        onKeyDown();
+        onKeyDown(keyMapping);
       }
       if (wasPressed) {
-        onKeyPress();
+        onKeyPress(keyMapping);
       }
     }
 
     if (!keyMapping.isDown() && wasPressed) {
-      onKeyUp();
+      onKeyUp(keyMapping);
       wasPressed = false;
     }
   }
@@ -32,11 +32,11 @@ public abstract class AbstractKeyInputHandler implements IKeyInputHandler {
   public abstract void onClientTick(ClientTickEvent.Post event);
 
   @Override
-  public void onKeyPress() {}
+  public void onKeyPress(KeyMapping keyMapping) {}
 
   @Override
-  public void onKeyUp() {}
+  public void onKeyUp(KeyMapping keyMapping) {}
 
   @Override
-  public void onKeyDown() {}
+  public void onKeyDown(KeyMapping keyMapping) {}
 }

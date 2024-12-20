@@ -2,9 +2,12 @@ package com.dotnomi.stranded.client.input.handler;
 
 import com.dotnomi.stranded.client.input.AbstractKeyInputHandler;
 import com.dotnomi.stranded.client.input.KeyMappings;
+import com.dotnomi.stranded.networking.packet.KeyInputC2SPacket;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.KeyMapping;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.slf4j.Logger;
 
 public class DebugKeyInputHandler extends AbstractKeyInputHandler {
@@ -21,7 +24,12 @@ public class DebugKeyInputHandler extends AbstractKeyInputHandler {
   }
 
   @Override
-  public void onKeyPress() {
+  public void onKeyPress(KeyMapping keyMapping) {
     LOGGER.info("Debug key pressed");
+  }
+
+  @Override
+  public void onKeyDown(KeyMapping keyMapping) {
+    PacketDistributor.sendToServer(new KeyInputC2SPacket(keyMapping.getName()));
   }
 }
