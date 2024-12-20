@@ -1,5 +1,5 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "key.categories.stranded": "Stranded",
+  "key.stranded.debug": "Execute Debug Function",
+  "key.stranded.skip_voice_over": "Skip Voiceover"
 }
