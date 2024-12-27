@@ -2,7 +2,7 @@ package com.dotnomi.stranded.client.input.handler;
 
 import com.dotnomi.stranded.client.input.AbstractKeyInputHandler;
 import com.dotnomi.stranded.client.input.KeyMappings;
-import com.dotnomi.stranded.event.custom.VoiceoverEvent;
+import com.dotnomi.stranded.event.VoiceoverEvent;
 import com.dotnomi.stranded.networking.packet.KeyInputC2SPacket;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.KeyMapping;

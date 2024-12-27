@@ -1,4 +1,4 @@
-package com.dotnomi.stranded.event.custom;
+package com.dotnomi.stranded.event;
 
 import net.neoforged.bus.api.Event;
 

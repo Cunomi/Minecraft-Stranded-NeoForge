@@ -8,7 +8,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import org.jetbrains.annotations.NotNull;
 
 public record KeyInputC2SPacket(String keyMappingName) implements CustomPacketPayload {
-  public static Type<KeyInputC2SPacket> TYPE = ModPayloadUtils.createType("c2s_key_input");
+  public static Type<KeyInputC2SPacket> TYPE = ModPayloadUtils.createType("c2s-key-input");
 
   public static StreamCodec<ByteBuf, KeyInputC2SPacket> CODEC = StreamCodec.composite(
     ByteBufCodecs.STRING_UTF8,

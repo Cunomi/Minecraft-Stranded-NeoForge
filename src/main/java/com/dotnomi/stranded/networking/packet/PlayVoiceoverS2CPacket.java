@@ -8,7 +8,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import org.jetbrains.annotations.NotNull;
 
 public record PlayVoiceoverS2CPacket(String voiceoverId) implements CustomPacketPayload {
-  public static Type<PlayVoiceoverS2CPacket> TYPE = ModPayloadUtils.createType("s2c_play_voiceover");
+  public static Type<PlayVoiceoverS2CPacket> TYPE = ModPayloadUtils.createType("s2c-play-voiceover");
 
   public static StreamCodec<ByteBuf, PlayVoiceoverS2CPacket> CODEC = StreamCodec.composite(
     ByteBufCodecs.STRING_UTF8,
