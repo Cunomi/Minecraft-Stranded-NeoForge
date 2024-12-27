@@ -1,5 +1,6 @@
 package com.dotnomi.stranded;
 
+import com.dotnomi.stranded.event.custom.VoiceoverEvent;
 import com.dotnomi.stranded.networking.ModPayloads;
 import com.dotnomi.stranded.networking.packet.PlayVoiceoverS2CPacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,6 +44,11 @@ public class StrandedMod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
+    }
+
+    @SubscribeEvent
+    public void onVoiceoverEvent(VoiceoverEvent event) {
+        LOGGER.debug("HELLO FROM VOICEOVER EVENT {}", event.getVoiceoverId());
     }
 
     @SubscribeEvent
