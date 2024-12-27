@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.dotnomi.stranded.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SoundSourceMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "key.categories.stranded": "Stranded",
   "key.stranded.debug": "Execute Debug Function",
-  "key.stranded.skip_voice_over": "Skip Voiceover"
+  "key.stranded.skip_voice_over": "Skip Voiceover",
+  "soundCategory.stranded_voiceover": "Stranded Voiceover"
 }
