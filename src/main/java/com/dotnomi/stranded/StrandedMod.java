@@ -1,6 +1,8 @@
 package com.dotnomi.stranded;
 
+import com.dotnomi.stranded.commands.ResetPlayerCommand;
 import com.dotnomi.stranded.event.VoiceoverEvent;
+import com.dotnomi.stranded.event.handler.PlayerLoggedInHandler;
 import com.dotnomi.stranded.networking.ModPayloads;
 import com.dotnomi.stranded.networking.packet.PlayVoiceoverS2CPacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -8,6 +10,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.slf4j.Logger;
@@ -30,8 +33,11 @@ public class StrandedMod
         NeoForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
+        NeoForge.EVENT_BUS.addListener(this::registerCommands);
 
         modEventBus.addListener(ModPayloads::register);
+
+        NeoForge.EVENT_BUS.register(new PlayerLoggedInHandler());
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -44,6 +50,10 @@ public class StrandedMod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
+    }
+
+    private void registerCommands(RegisterCommandsEvent event) {
+        ResetPlayerCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent
